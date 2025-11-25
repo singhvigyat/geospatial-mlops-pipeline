@@ -36,7 +36,7 @@ jobs:
           echo "Building Docker image..."
           docker build -t planet-sentinel-serve serve/
           echo "Stopping old container..."
-          docker stop planet-sentinel || true
-          docker rm planet-sentinel || true
+          docker stop planet-sentinel; if ($?) { echo "Stopped" } else { echo "No container to stop" }
+          docker rm planet-sentinel; if ($?) { echo "Removed" } else { echo "No container to remove" }
           echo "Starting new container..."
           docker run -d --name planet-sentinel -p 8000:8000 planet-sentinel-serve
