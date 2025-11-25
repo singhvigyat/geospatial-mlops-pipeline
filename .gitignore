@@ -3,6 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 /.venv
+.venv_310/
 # C extensions
 *.so
 key.json
@@ -205,3 +206,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+docs
+
