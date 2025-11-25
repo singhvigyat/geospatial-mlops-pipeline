@@ -1,0 +1,9 @@
+# Ignore data and virtual environments
+data/
+runs/
+.venv/
+.venv_310/
+.git/
+.github/
+__pycache__/
+*.pyc

@@ -34,7 +34,7 @@ jobs:
         if: success() # Only run if a new model was found (simulated logic)
         run: |
           echo "Building Docker image..."
-          docker build -t planet-sentinel-serve serve/
+          docker build -t planet-sentinel-serve -f serve/Dockerfile .
           echo "Stopping old container..."
           docker stop planet-sentinel; if ($?) { echo "Stopped" } else { echo "No container to stop" }
           docker rm planet-sentinel; if ($?) { echo "Removed" } else { echo "No container to remove" }
